@@ -1,95 +1,47 @@
+import Footer6 from "@/components/footers/Footer6";
+import Header6 from "@/components/headers/Header6";
+import Home6 from "@/components/homes/home-6";
+import Hero1 from "@/components/homes/home-6/heros/Hero1";
+import Hero2 from "@/components/homes/home-6/heros/Hero2";
 import Image from "next/image";
-import styles from "./page.module.css";
-
-export default function Home() {
+import dynamic from "next/dynamic";
+import { fancyOnepage } from "@/data/menu";
+import ParallaxContainer from "@/components/common/ParallaxContainer";
+export const metadata = {
+  title:
+    "Home 6 Image Parallax Onepage || Resonance &mdash; One & Multi Page React Nextjs Creative Template",
+  description:
+    "Resonance &mdash; One & Multi Page React Nextjs Creative Template",
+};
+export default function Home6ImageParallaxOnepage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <div className="theme-fancy">
+        <div className="page" id="top">
+          <div className="dark-mode">
+            <nav className="main-nav dark transparent light-after-scroll stick-fixed wow-menubar wch-unset">
+              <Header6 links={fancyOnepage} />
+            </nav>{" "}
+          </div>
+          <main id="main">
+            <ParallaxContainer
+              className="home-section bg-dark-1 bg-dark-alpha-80 light-content parallax-5 scrollSpysection"
+              style={{
+                backgroundImage:
+                  "url(/assets/images/demo-fancy/section-bg-1.jpg)",
+              }}
+              id="home"
+            >
+              <Hero2 />
+            </ParallaxContainer>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <Home6 onePage />
+          </main>
+          <footer className="page-section footer bg-dark-1 light-content pb-30">
+            <Footer6 />
+          </footer>
+        </div>{" "}
+      </div>
+    </>
   );
 }
