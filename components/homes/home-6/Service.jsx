@@ -29,25 +29,6 @@ export default function Service() {
         {/* End Services Item */}
       </div>
       {/* End Services Grid */}
-      <div className="small text-gray text-center mt-60 mt-sm-40">
-        Illustrations by{" "}
-        <a
-          href="https://www.instagram.com/b0g3nta"
-          rel="noopener nofollow"
-          target="_blank"
-        >
-          bogenta
-        </a>{" "}
-        from{" "}
-        <a
-          href="https://icons8.com/illustrations"
-          rel="noopener nofollow"
-          target="_blank"
-        >
-          Ouch
-        </a>
-        !
-      </div>{" "}
     </>
   );
 }

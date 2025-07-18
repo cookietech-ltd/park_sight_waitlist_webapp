@@ -106,23 +106,23 @@ export const serviceItems = [
 export const services3 = [
   {
     src: "/assets/images/demo-fancy/services/service-1.png",
-    title: "Branding",
-    text: "A type of marketing agency, group or a firm which specializes in creating brands, people and their careers marketed as brands.",
+    title: "Search",
+    text: "Interactive map-based search with drag and pull functionality for conveniently finding your desired parking spots.",
   },
   {
     src: "/assets/images/demo-fancy/services/service-2.png",
-    title: "Web Design",
-    text: "A static website stores a unique file for every page of a static website. Each time that page is requested, the same content is returned.",
+    title: "Reserve",
+    text: "Secure your spot and lock in your price with just one tap.",
   },
   {
     src: "/assets/images/demo-fancy/services/service-3.png",
-    title: "Development",
-    text: "There are three kinds of web developer specialization: front-end developer, back-end developer, and full-stack developer.",
+    title: "Pay & Go",
+    text: "Automatic digital payments—simply drive away when you're done.",
   },
   {
     src: "/assets/images/demo-fancy/services/service-4.png",
-    title: "Marketing",
-    text: "Marketing refers to activities a company undertakes to promote the buying or selling of a product, service, or good.",
+    title: "Park",
+    text: "Follow in-app directions, pull in, and check-in seamlessly.",
   },
 ];
 

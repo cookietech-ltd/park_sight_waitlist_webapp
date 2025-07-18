@@ -14,14 +14,13 @@ export default function Hero2() {
             {/* Home Section Text */}
             <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
               <h2 className="section-caption-fancy large mb-30 mb-xs-20 wow fadeInUp">
-                Resonance Web Studio
+                ParkSight™
               </h2>
               <h1
                 className="hs-title-9 mb-30 wow fadeRotateIn"
                 data-wow-delay="0.2s"
               >
-                Make your beautiful web presence{" "}
-                <span className="mark-decoration-5">easily</span>{" "}
+                Park Smarter, Live Better—Reserve your spot in three clicks.
               </h1>
               <div className="row">
                 <div className="col-md-10 offset-md-1">
@@ -29,9 +28,7 @@ export default function Hero2() {
                     className="section-descr white mb-40 wow fadeInUp"
                     data-wow-delay="0.4s"
                   >
-                    We are an award winning studio specializing in branding,
-                    design and engineering. Our mission is to make work process
-                    meaningful.
+                    Access private driveways, garages, and commercial lots near you with AI‑powered availability and dynamic pricing.
                   </p>
                 </div>
               </div>
@@ -40,17 +37,10 @@ export default function Hero2() {
                 data-wow-delay="0.6s"
               >
                 <a
-                  href="#portfolio"
+                  href="#waitlist"
                   className="btn btn-mod btn-color btn-large btn-round btn-hover-anim mx-1 mb-xs-10"
                 >
-                  <span>Discover Works</span>
-                </a>
-                <a
-                  onClick={() => setOpen(true)}
-                  className="btn btn-mod btn-w-c btn-large btn-round mx-1 mb-xs-10 lightbox mfp-iframe"
-                  data-btn-animate="y"
-                >
-                  <i className="icon-play size-13 me-1" /> How we work?
+                  <span>Early Bird Discount</span>
                 </a>
               </div>
             </div>

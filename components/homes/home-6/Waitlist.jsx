@@ -2,7 +2,7 @@
 import { contactItems } from "@/data/contact";
 import React from "react";
 import Image from "next/image";
-export default function Contact() {
+export default function Waitlist() {
   return (
     <div className="container position-relative">
       <div className="row">
@@ -174,4 +174,4 @@ export default function Contact() {
       </div>
     </div>
   );
-}
+} 

@@ -3,7 +3,7 @@ import { toggleMobileMenu } from "@/utlis/toggleMobileMenu";
 import Nav from "./components/Nav";
 
 import Image from "next/image";
-import LanguageSelect from "./components/LanguageSelect";
+
 import Link from "next/link";
 export default function Header6({ links }) {
   return (
@@ -46,9 +46,6 @@ export default function Header6({ links }) {
           <li className="desktop-nav-display">
             <div className="vr mt-2" />
           </li>
-          {/* Languages */}
-          <LanguageSelect />
-          {/* End Languages */}
           <li>
             {links[0].href.includes("/") ? (
               <Link
@@ -56,27 +53,27 @@ export default function Header6({ links }) {
                 className="opacity-1 no-hover"
               >
                 <span
-                  className="btn btn-mod btn-w btn-border-c btn-border-white-light btn-small btn-round"
+                  className="btn btn-mod btn-color btn-border-c btn-border-dark btn-small btn-round"
                   data-btn-animate="y"
                 >
                   <span className="btn-animate-y">
-                    <span className="btn-animate-y-1">Get in touch</span>
+                    <span className="btn-animate-y-1">Early Discount</span>
                     <span className="btn-animate-y-2" aria-hidden="true">
-                      Get in touch
+                      Early Discount
                     </span>
                   </span>
                 </span>
               </Link>
             ) : (
-              <a href="#contact" className="opacity-1 no-hover">
+              <a href="#waitlist" className="opacity-1 no-hover">
                 <span
-                  className="btn btn-mod btn-w btn-border-c btn-border-white-light btn-small btn-round"
+                  className="btn btn-mod btn-color btn-border-c btn-border-dark btn-small btn-round"
                   data-btn-animate="y"
                 >
                   <span className="btn-animate-y">
-                    <span className="btn-animate-y-1">Get in touch</span>
+                    <span className="btn-animate-y-1">Early Discount</span>
                     <span className="btn-animate-y-2" aria-hidden="true">
-                      Get in touch
+                      Early Discount
                     </span>
                   </span>
                 </span>

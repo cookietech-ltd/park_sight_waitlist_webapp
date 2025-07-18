@@ -97,10 +97,24 @@ export const features2 = [
 ];
 
 export const features3 = [
-  { text: "We're professional" },
-  { text: "We're creative" },
-  { text: "We're honest" },
-  { text: "We're friendly" },
+  { text: "Real-time availability" },
+  { text: "Secure payment system" },
+  { text: "24/7 customer support" },
+  { text: "Easy booking process" },
+];
+
+export const driverFeatures = [
+  { text: "Find parking spots instantly" },
+  { text: "Reserve spaces in advance" },
+  { text: "Pay securely through the app" },
+  { text: "Navigate directly to your spot" },
+];
+
+export const hostFeatures = [
+  { text: "Earn money from unused spaces" },
+  { text: "Set your own pricing and schedule" },
+  { text: "Manage bookings effortlessly" },
+  { text: "Get paid automatically" },
 ];
 
 export const features4 = [

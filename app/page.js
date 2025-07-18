@@ -9,10 +9,11 @@ import { fancyOnepage } from "@/data/menu";
 import ParallaxContainer from "@/components/common/ParallaxContainer";
 export const metadata = {
   title:
-    "Home 6 Image Parallax Onepage || Resonance &mdash; One & Multi Page React Nextjs Creative Template",
+    "ParkSight Waitlist - Find & List Parking Spaces || Join the Future of Parking",
   description:
-    "Resonance &mdash; One & Multi Page React Nextjs Creative Template",
+    "Join ParkSight waitlist - The revolutionary parking marketplace where drivers find parking spaces and hosts list their spots. Be among the first to experience seamless parking.",
 };
+
 export default function Home6ImageParallaxOnepage() {
   return (
     <>
@@ -28,7 +29,7 @@ export default function Home6ImageParallaxOnepage() {
               className="home-section bg-dark-1 bg-dark-alpha-80 light-content parallax-5 scrollSpysection"
               style={{
                 backgroundImage:
-                  "url(/assets/images/demo-fancy/section-bg-1.jpg)",
+                  "url(/assets/images/hero_image.png)",
               }}
               id="home"
             >
