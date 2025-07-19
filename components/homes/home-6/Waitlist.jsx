@@ -1,68 +1,65 @@
 "use client";
-import { contactItems } from "@/data/contact";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import { db } from "@/lib/firebase";
+import { collection, addDoc } from "firebase/firestore";
+
 export default function Waitlist() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [formMessage, setFormMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); // 'success' or 'error'
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setFormMessage("");
+
+    const formData = new FormData(e.target);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const userType = formData.get("user_type");
+
+    try {
+      // Add document to Firebase
+      await addDoc(collection(db, "waitlist"), {
+        fullName: name,
+        email: email,
+        userType: userType,
+        timestamp: new Date(),
+        createdAt: new Date().toISOString()
+      });
+
+      // Success message
+      setFormMessage("Thank you! You've been successfully added to our waitlist. We'll be in touch soon!");
+      setMessageType("success");
+      
+      // Reset form
+      e.target.reset();
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      setFormMessage("Oops! Something went wrong. Please try again.");
+      setMessageType("error");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="container position-relative">
       <div className="row">
         {/* Left Column */}
         <div className="col-lg-4 mb-md-50 mb-sm-30 position-relative z-index-1">
           <h2 className="section-caption-fancy mb-20 mb-xs-10">Join Waitlist</h2>
-          <h3 className="section-title mb-50 mb-sm-30">
+          <h3 className="section-title mb-20 mb-sm-15">
             Be among the first to experience Park Sight.
           </h3>
-          {/* Contact Information */}
-          <div className="row">
-            <div className="col-md-11">
-              {/* Address */}
-
-              {contactItems.map((item, index) => (
-                <React.Fragment key={index}>
-                  <div
-                    className={`contact-item ${
-                      index !== 3 ? "mb-40 mb-sm-20" : ""
-                    }`}
-                  >
-                    <div className="ci-icon">
-                      <i className={item.iconClass} />
-                    </div>
-                    <h4 className="ci-title  visually-hidden">{item.title}</h4>
-                    <div className="ci-text">{item.text}</div>
-                    <div>
-                      <a
-                        href={item.link.url}
-                        target={item.link.target}
-                        rel={item.link.rel}
-                        className="link-hover-anim"
-                        data-link-animate="y"
-                      >
-                        <span className="link-strong link-strong-unhovered">
-                          {item.link.text}{" "}
-                          <i
-                            className="mi-arrow-right size-18"
-                            aria-hidden="true"
-                          ></i>
-                        </span>
-                        <span
-                          className="link-strong link-strong-hovered"
-                          aria-hidden="true"
-                        >
-                          {item.link.text}{" "}
-                          <i
-                            className="mi-arrow-right size-18"
-                            aria-hidden="true"
-                          ></i>
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </React.Fragment>
-              ))}
-              {/* End Phone */}
-            </div>
+          {/* Benefits Section */}
+          <div className="mb-40 mb-sm-20">
+            <p className="section-descr mb-0" style={{ fontSize: '0.875rem' }}>
+              Waitlist members get <strong style={{ color: '#3b82f6' }}>$10 off their first booking</strong>. Potential Hosts are eligible for our <strong style={{ color: '#3b82f6' }}>Founding Host Program</strong> with 0% commission for 3 months!
+            </p>
           </div>
-          {/* End Contact Information */}
+          {/* End Benefits Section */}
         </div>
         {/* End Left Column */}
         {/* Right Column */}
@@ -72,7 +69,7 @@ export default function Waitlist() {
             <div className="decoration-11 d-none d-xl-block">
               <div className="wow fadeInUp">
                 <Image
-                  src="/assets/images/demo-fancy/contact-section-image.png"
+                  src="/assets/images/early_bird_discount.svg"
                   width={225}
                   height={250}
                   alt=""
@@ -84,7 +81,7 @@ export default function Waitlist() {
               <h4 className="h3 mb-30">Join Our Waitlist</h4>
               {/* Contact Form */}
               <form
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={handleSubmit}
                 className="form contact-form"
                 id="contact_form"
               >
@@ -124,28 +121,74 @@ export default function Waitlist() {
                     {/* End Email */}
                   </div>
                 </div>
-                {/* Interest */}
+                {/* User Type Selection */}
                 <div className="form-group">
-                  <label htmlFor="interest">What interests you most?</label>
-                  <textarea
-                    name="interest"
-                    id="interest"
-                    className="input-lg round form-control"
-                    style={{ height: 130 }}
-                    placeholder="Tell us what excites you about Park Sight..."
-                    defaultValue={""}
-                  />
+                  <label htmlFor="user_type">I am a:</label>
+                  <div className="row mt-2">
+                    <div className="col-md-4">
+                      <label className="d-flex align-items-center p-3 bg-light round cursor-pointer hover-bg-light-2">
+                        <input
+                          type="radio"
+                          name="user_type"
+                          value="driver"
+                          className="me-3"
+                          required
+                        />
+                        <span className="font-medium">Driver</span>
+                      </label>
+                    </div>
+                    <div className="col-md-4">
+                      <label className="d-flex align-items-center p-3 bg-light round cursor-pointer hover-bg-light-2">
+                        <input
+                          type="radio"
+                          name="user_type"
+                          value="host"
+                          className="me-3"
+                        />
+                        <span className="font-medium">Host</span>
+                      </label>
+                    </div>
+                    <div className="col-md-4">
+                      <label className="d-flex align-items-center p-3 bg-light round cursor-pointer hover-bg-light-2">
+                        <input
+                          type="radio"
+                          name="user_type"
+                          value="both"
+                          className="me-3"
+                        />
+                        <span className="font-medium">Both</span>
+                      </label>
+                    </div>
+                  </div>
                 </div>
+                {/* Form Message */}
+                {formMessage && (
+                  <div className={`alert ${messageType === 'success' ? 'alert-success' : 'alert-danger'} mb-3`}>
+                    {formMessage}
+                  </div>
+                )}
+                
                 <div className="row">
                   <div className="col-md-6 col-xl-5">
                     {/* Send Button */}
                     <div className="pt-3">
                       <button
+                        type="submit"
                         className="submit_btn btn btn-mod btn-color btn-large btn-round btn-hover-anim"
                         id="submit_btn"
                         aria-controls="result"
+                        disabled={isLoading}
                       >
-                        <span>Join Waitlist</span>
+                        <span>
+                          {isLoading ? (
+                            <>
+                              <i className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></i>
+                              Joining...
+                            </>
+                          ) : (
+                            "Join Waitlist"
+                          )}
+                        </span>
                       </button>
                     </div>
                     {/* End Send Button */}

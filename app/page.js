@@ -29,7 +29,7 @@ export default function Home6ImageParallaxOnepage() {
               className="home-section bg-dark-1 bg-dark-alpha-80 light-content parallax-5 scrollSpysection"
               style={{
                 backgroundImage:
-                  "url(/assets/images/hero_image.png)",
+                  "url(/assets/images/hero.jpg)",
               }}
               id="home"
             >

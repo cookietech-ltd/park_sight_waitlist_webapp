@@ -8,15 +8,15 @@ export default function About() {
           <div className="composition-1">
             <div className="composition-1-image-1">
               <Image
-                src="/assets/images/demo-fancy/section-image-1.jpg"
-                width={480}
-                height={358}
-                alt="Image Description"
+                  src="/assets/images/image_480_358.jpg"
+                  width={480}
+                  height={358}
+                  alt="Image Description"
               />
             </div>
             <div className="composition-1-image-2">
               <Image
-                src="/assets/images/demo-fancy/section-image-2.jpg"
+                src="/assets/images/image_440_330.jpg"
                 width={440}
                 height={330}
                 alt="Image Description"
@@ -56,7 +56,7 @@ export default function About() {
           <div className="composition-2">
             <div className="composition-2-image-1 mt-xs-0">
               <Image
-                src="/assets/images/demo-fancy/section-image-3.jpg"
+                src="/assets/images/image_372_500.jpg"
                 width={372}
                 height={500}
                 alt="Image Description"
@@ -64,7 +64,7 @@ export default function About() {
             </div>
             <div className="composition-2-image-2">
               <Image
-                src="/assets/images/demo-fancy/section-image-4.jpg"
+                src="/assets/images/image_440_330_3.png"
                 alt="Image Description"
                 width={440}
                 height={330}
@@ -91,7 +91,7 @@ export default function About() {
           <div className="composition-3">
             <div className="composition-3-image-1">
               <Image
-                src="/assets/images/demo-fancy/section-image-6.jpg"
+                src="/assets/images/image_500_372.jpg"
                 width={500}
                 height={372}
                 alt="Image Description"
@@ -99,7 +99,7 @@ export default function About() {
             </div>
             <div className="composition-3-image-2">
               <Image
-                src="/assets/images/demo-fancy/section-image-5.jpg"
+                src="/assets/images/image_440_330_2.jpeg"
                 width={440}
                 height={330}
                 alt="Image Description"
