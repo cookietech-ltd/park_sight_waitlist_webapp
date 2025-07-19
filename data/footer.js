@@ -1,7 +1,6 @@
 export const footerLinks = [
-  { name: "Privacy Policy", path: "#" },
-  { name: "Terms & Conditions", path: "#" },
-  { name: "Presskit", path: "#" },
+  { name: "Privacy Policy", path: "/assets/pdf/parksight_privacy_policy.pdf", target: "_blank" },
+  { name: "Terms & Conditions", path: "/assets/pdf/parksight_terms_of_service.pdf", target: "_blank" },
 ];
 
 export const footerLinks2 = [
@@ -51,5 +50,5 @@ export const socialMediaLinks = [
 export const navigationLinks = [
   { href: "#about", text: "About" },
   { href: "#services", text: "How it works" },
-  { href: "#portfolio", text: "Why us?" },
+  { href: "#portfolio", text: "Why ParkSight?" },
 ];
