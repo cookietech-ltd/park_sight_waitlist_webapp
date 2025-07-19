@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Features() {
   return (
     <>
-      <div className="container position-relative">
+      <div className="container position-relative" id="drivers">
         <div className="row">
           {/* Image */}
           <div className="col-lg-6 col-xl-7 d-flex align-items-center">
@@ -58,7 +58,7 @@ export default function Features() {
       </div>
 
       {/* Copy of Why Choose ParkSight Section with Image on Right */}
-      <div className="container position-relative mt-100">
+      <div className="container position-relative mt-100" id="hosts">
         <div className="row">
           {/* Section Text */}
           <div className="col-lg-6 col-xl-5 d-flex align-items-center mb-md-60 mb-sm-40">

@@ -176,6 +176,7 @@ export default function Home6({ onePage = false, dark = false }) {
       </section>
       <section
         className={`page-section  ${dark ? "bg-dark-1 light-content" : ""} `}
+        id="blog"
       >
         <Features />
       </section>

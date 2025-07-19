@@ -121,8 +121,9 @@ export const fancyMultipageDark = [
 export const fancyOnepage = [
   { href: "#home", text: "Home", className: "active" },
   { href: "#about", text: "About" },
-  { href: "#services", text: "Services" },
-  { href: "#portfolio", text: "Portfolio" },
+  { href: "#services", text: "How it works" },
+  { href: "#blog", text: "Why us?" },
+  { href: "#portfolio", text: "Key Features" },
 ];
 
 export const elegantMultipage = [

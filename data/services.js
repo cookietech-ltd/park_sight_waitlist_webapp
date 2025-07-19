@@ -105,22 +105,22 @@ export const serviceItems = [
 
 export const services3 = [
   {
-    src: "/assets/images/demo-fancy/services/service-1.png",
+    src: "/assets/images/search.svg",
     title: "Search",
     text: "Interactive map-based search with drag and pull functionality for conveniently finding your desired parking spots.",
   },
   {
-    src: "/assets/images/demo-fancy/services/service-2.png",
+    src: "/assets/images/reserve.svg",
     title: "Reserve",
     text: "Secure your spot and lock in your price with just one tap.",
   },
   {
-    src: "/assets/images/demo-fancy/services/service-3.png",
+    src: "/assets/images/pay.svg",
     title: "Pay & Go",
     text: "Automatic digital payments—simply drive away when you're done.",
   },
   {
-    src: "/assets/images/demo-fancy/services/service-4.png",
+    src: "/assets/images/park.svg",
     title: "Park",
     text: "Follow in-app directions, pull in, and check-in seamlessly.",
   },

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { db } from "@/lib/firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
 
 export default function Waitlist() {
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +20,21 @@ export default function Waitlist() {
     const userType = formData.get("user_type");
 
     try {
-      // Add document to Firebase
+      // Check if email already exists
+      const emailQuery = query(
+        collection(db, "waitlist"), 
+        where("email", "==", email)
+      );
+      const querySnapshot = await getDocs(emailQuery);
+
+      if (!querySnapshot.empty) {
+        // Email already exists
+        setFormMessage("This email is already registered on our waitlist. Thank you for your interest!");
+        setMessageType("error");
+        return;
+      }
+
+      // Add document to Firebase if email doesn't exist
       await addDoc(collection(db, "waitlist"), {
         fullName: name,
         email: email,
