@@ -180,27 +180,7 @@ export default function Home6({ onePage = false, dark = false }) {
       >
         <Features />
       </section>
-      <section
-        className={`page-section  scrollSpysection  ${
-          dark ? "bg-dark-1 light-content" : ""
-        } `}
-        id="portfolio"
-      >
-        <div className="container position-relative">
-          <div className="row mb-60 mb-sm-40">
-            <div className="col-md-8 offset-md-2 text-center">
-              <h2 className="section-caption-fancy mb-20 mb-xs-10">
-                Key Features
-              </h2>
-              <h3 className="section-title mb-0">
-                We Redefine Urban Parking
-              </h3>
-            </div>
-          </div>
-
-          <Portfolio />
-        </div>
-      </section>
+      
       <hr className={`mt-0 mb-0 ${dark ? "white" : ""}`} />
 
       <section
