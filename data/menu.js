@@ -122,8 +122,7 @@ export const fancyOnepage = [
   { href: "#home", text: "Home", className: "active" },
   { href: "#about", text: "About" },
   { href: "#services", text: "How it works" },
-  { href: "#blog", text: "Why us?" },
-  { href: "#portfolio", text: "Key Features" },
+  { href: "#portfolio", text: "Why us?" },
 ];
 
 export const elegantMultipage = [
