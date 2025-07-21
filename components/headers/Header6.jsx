@@ -53,13 +53,14 @@ export default function Header6({ links }) {
                 className="opacity-1 no-hover"
               >
                 <span
-                  className="btn btn-mod btn-color btn-border-c btn-border-dark btn-small btn-round"
+                  className="btn btn-mod btn-color btn-border-c btn-border-dark btn-small btn-round early-discount-btn"
                   data-btn-animate="y"
+                  style={{ backgroundColor: '#004aac', color: 'white' }}
                 >
                   <span className="btn-animate-y">
-                    <span className="btn-animate-y-1">Early Discount</span>
+                    <span className="btn-animate-y-1">Join Wishlist</span>
                     <span className="btn-animate-y-2" aria-hidden="true">
-                      Early Discount
+                      Join Wishlist
                     </span>
                   </span>
                 </span>
@@ -67,13 +68,14 @@ export default function Header6({ links }) {
             ) : (
               <a href="#waitlist" className="opacity-1 no-hover">
                 <span
-                  className="btn btn-mod btn-color btn-border-c btn-border-dark btn-small btn-round"
+                  className="btn btn-mod btn-color btn-border-c btn-border-dark btn-small btn-round early-discount-btn"
                   data-btn-animate="y"
+                  style={{ backgroundColor: '#004aac', color: 'white' }}
                 >
                   <span className="btn-animate-y">
-                    <span className="btn-animate-y-1">Early Discount</span>
+                    <span className="btn-animate-y-1">Join Wishlist</span>
                     <span className="btn-animate-y-2" aria-hidden="true">
-                      Early Discount
+                      Join Wishlist
                     </span>
                   </span>
                 </span>

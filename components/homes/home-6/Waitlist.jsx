@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
 
@@ -18,6 +17,14 @@ export default function Waitlist() {
     const name = formData.get("name");
     const email = formData.get("email");
     const userType = formData.get("user_type");
+
+    // Basic validation
+    if (!name || !email || !userType) {
+      setFormMessage("Please fill out all fields.");
+      setMessageType("error");
+      setIsLoading(false);
+      return;
+    }
 
     try {
       // Check if email already exists
@@ -44,7 +51,7 @@ export default function Waitlist() {
       });
 
       // Success message
-      setFormMessage("Thank you! You've been successfully added to our waitlist. We'll be in touch soon!");
+      setFormMessage(`Thank you, ${name}! ${email} has been added to the waitlist. We'll be in touch!`);
       setMessageType("success");
       
       // Reset form
@@ -60,174 +67,135 @@ export default function Waitlist() {
 
   return (
     <div className="container position-relative">
-      <div className="row">
-        {/* Left Column */}
-        <div className="col-lg-4 mb-md-50 mb-sm-30 position-relative z-index-1">
-          <h2 className="section-caption-fancy mb-20 mb-xs-10">Join Waitlist</h2>
-          <h3 className="section-title mb-20 mb-sm-15">
-            Be among the first to experience Park Sight.
-          </h3>
-          {/* Benefits Section */}
-          <div className="mb-40 mb-sm-20">
-            <p className="section-descr mb-0" style={{ fontSize: '0.875rem' }}>
-              Waitlist members get <strong style={{ color: '#3b82f6' }}>$10 off their first booking</strong>. Potential Hosts are eligible for our <strong style={{ color: '#3b82f6' }}>Founding Host Program</strong> with 0% commission for 3 months!
+      <div className="row justify-content-center">
+        <div className="col-lg-8 text-center">
+          <h2 className="section-title mb-30 white">Be the First to Park Smarter.</h2>
+          <p className="section-descr mb-40 white opacity-08" style={{ fontSize: '1.125rem' }}>
+            ParkSight launches in Cincinnati, Columbus, and Cleveland on <strong>September 2nd, 2025</strong>. Join the exclusive waitlist today to be the first to know when we go live.
+          </p>
+          
+          {/* Benefits Box */}
+          <div className="mb-50 p-4 rounded" style={{ backgroundColor: 'var(--color-primary-1)', color: 'white' }}>
+            <p className="mb-0" style={{ fontWeight: '600' }}>
+              Waitlist members get <strong>$10 off their first booking</strong>. Potential Hosts are eligible for our <strong>Founding Host Program</strong> with 0% commission for 3 months!
             </p>
           </div>
-          {/* End Benefits Section */}
-        </div>
-        {/* End Left Column */}
-        {/* Right Column */}
-        <div className="col-lg-8 col-xl-7 offset-xl-1">
-          <div className="position-relative">
-            {/* Decorative Image */}
-            <div className="decoration-11 d-none d-xl-block">
-              <div className="wow fadeInUp">
-                <Image
-                  src="/assets/images/early_bird_discount.svg"
-                  width={225}
-                  height={250}
-                  alt=""
-                />
+
+          {/* Waitlist Form */}
+          <form
+            onSubmit={handleSubmit}
+            className="form contact-form"
+            style={{ maxWidth: '500px', margin: '0 auto' }}
+          >
+            {/* Form Message */}
+            {formMessage && (
+              <div className={`alert ${messageType === 'success' ? 'alert-success' : 'alert-danger'} mb-4`}>
+                {formMessage}
+              </div>
+            )}
+
+            <div className="mb-4">
+              <label htmlFor="name" className="visually-hidden">Full Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                className="input-lg round form-control"
+                placeholder="Enter your full name"
+                required
+                aria-required="true"
+                style={{ padding: '16px', fontSize: '16px' }}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label htmlFor="email" className="visually-hidden">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className="input-lg round form-control"
+                placeholder="Enter your email address"
+                required
+                aria-required="true"
+                style={{ padding: '16px', fontSize: '16px' }}
+              />
+            </div>
+
+            {/* User Type Selection */}
+            <div className="mb-4 text-start">
+              <label className="form-label white" style={{ fontWeight: '500' }}>I am a:</label>
+              <div className="row g-3 mt-2">
+                <div className="col-md-4">
+                  <label className="d-flex align-items-center p-3 rounded cursor-pointer transition-all" 
+                         style={{ backgroundColor: 'var(--color-dark-3)', border: 'none' }}>
+                    <input
+                      type="radio"
+                      name="user_type"
+                      value="driver"
+                      className="me-3"
+                      required
+                      style={{ accentColor: 'var(--color-primary-1)' }}
+                    />
+                    <span className="white" style={{ fontWeight: '500' }}>Driver</span>
+                  </label>
+                </div>
+                <div className="col-md-4">
+                  <label className="d-flex align-items-center p-3 rounded cursor-pointer transition-all"
+                         style={{ backgroundColor: 'var(--color-dark-3)', border: 'none' }}>
+                    <input
+                      type="radio"
+                      name="user_type"
+                      value="host"
+                      className="me-3"
+                      style={{ accentColor: 'var(--color-primary-1)' }}
+                    />
+                    <span className="white" style={{ fontWeight: '500' }}>Host</span>
+                  </label>
+                </div>
+                <div className="col-md-4">
+                  <label className="d-flex align-items-center p-3 rounded cursor-pointer transition-all"
+                         style={{ backgroundColor: 'var(--color-dark-3)', border: 'none' }}>
+                    <input
+                      type="radio"
+                      name="user_type"
+                      value="both"
+                      className="me-3"
+                      style={{ accentColor: 'var(--color-primary-1)' }}
+                    />
+                    <span className="white" style={{ fontWeight: '500' }}>Both</span>
+                  </label>
+                </div>
               </div>
             </div>
-            {/* End Decorative Image */}
-            <div className="box-shadow round p-4 p-sm-5">
-              <h4 className="h3 mb-30">Join Our Waitlist</h4>
-              {/* Contact Form */}
-              <form
-                onSubmit={handleSubmit}
-                className="form contact-form"
-                id="contact_form"
+
+            <div className="mt-4">
+              <button
+                type="submit"
+                className="btn btn-mod btn-color btn-large btn-round btn-hover-anim w-100"
+                disabled={isLoading}
+                style={{ 
+                  padding: '16px 24px', 
+                  fontSize: '18px', 
+                  fontWeight: '700',
+                  backgroundColor: 'var(--color-primary-1)',
+                  color: 'white'
+                }}
               >
-                <div className="row">
-                  <div className="col-md-6">
-                    {/* Name */}
-                    <div className="form-group">
-                      <label htmlFor="name">Full Name</label>
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        className="input-lg round form-control"
-                        placeholder="Enter your full name"
-                        pattern=".{3,100}"
-                        required
-                        aria-required="true"
-                      />
-                    </div>
-                    {/* End Name */}
-                  </div>
-                  <div className="col-md-6">
-                    {/* Email */}
-                    <div className="form-group">
-                      <label htmlFor="email">Email Address</label>
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        className="input-lg round form-control"
-                        placeholder="Enter your email address"
-                        pattern=".{5,100}"
-                        required
-                        aria-required="true"
-                      />
-                    </div>
-                    {/* End Email */}
-                  </div>
-                </div>
-                {/* User Type Selection */}
-                <div className="form-group">
-                  <label htmlFor="user_type">I am a:</label>
-                  <div className="row mt-2">
-                    <div className="col-md-4">
-                      <label className="d-flex align-items-center p-3 bg-light round cursor-pointer hover-bg-light-2">
-                        <input
-                          type="radio"
-                          name="user_type"
-                          value="driver"
-                          className="me-3"
-                          required
-                        />
-                        <span className="font-medium">Driver</span>
-                      </label>
-                    </div>
-                    <div className="col-md-4">
-                      <label className="d-flex align-items-center p-3 bg-light round cursor-pointer hover-bg-light-2">
-                        <input
-                          type="radio"
-                          name="user_type"
-                          value="host"
-                          className="me-3"
-                        />
-                        <span className="font-medium">Host</span>
-                      </label>
-                    </div>
-                    <div className="col-md-4">
-                      <label className="d-flex align-items-center p-3 bg-light round cursor-pointer hover-bg-light-2">
-                        <input
-                          type="radio"
-                          name="user_type"
-                          value="both"
-                          className="me-3"
-                        />
-                        <span className="font-medium">Both</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                {/* Form Message */}
-                {formMessage && (
-                  <div className={`alert ${messageType === 'success' ? 'alert-success' : 'alert-danger'} mb-3`}>
-                    {formMessage}
-                  </div>
-                )}
-                
-                <div className="row">
-                  <div className="col-md-6 col-xl-5">
-                    {/* Send Button */}
-                    <div className="pt-3">
-                      <button
-                        type="submit"
-                        className="submit_btn btn btn-mod btn-color btn-large btn-round btn-hover-anim"
-                        id="submit_btn"
-                        aria-controls="result"
-                        disabled={isLoading}
-                      >
-                        <span>
-                          {isLoading ? (
-                            <>
-                              <i className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></i>
-                              Joining...
-                            </>
-                          ) : (
-                            "Join Waitlist"
-                          )}
-                        </span>
-                      </button>
-                    </div>
-                    {/* End Send Button */}
-                  </div>
-                  <div className="col-md-6 col-xl-7 d-flex align-items-center">
-                    {/* Inform Tip */}
-                    <div className="form-tip w-100 pt-3 mt-sm-20">
-                      <i className="icon-info size-16" />
-                      Join our exclusive waitlist to get early access. We'll notify you as soon as we launch.
-                    </div>
-                    {/* End Inform Tip */}
-                  </div>
-                </div>
-                <div
-                  id="result"
-                  role="region"
-                  aria-live="polite"
-                  aria-atomic="true"
-                />
-              </form>
-              {/* End Contact Form */}
+                <span>
+                  {isLoading ? (
+                    <>
+                      <i className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></i>
+                      Submitting...
+                    </>
+                  ) : (
+                    "Join the ParkSight Waitlist"
+                  )}
+                </span>
+              </button>
             </div>
-          </div>
+          </form>
         </div>
-        {/* End Right Column */}
       </div>
     </div>
   );

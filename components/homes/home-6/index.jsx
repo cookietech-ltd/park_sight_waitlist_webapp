@@ -5,6 +5,8 @@ import Features from "./Features";
 import Portfolio from "./Portfolio";
 import Waitlist from "./Waitlist";
 import Link from "next/link";
+import Image from "next/image";
+import { hostFeatures } from "@/data/features";
 
 export default function Home6({ onePage = false, dark = false }) {
   return (
@@ -175,8 +177,8 @@ export default function Home6({ onePage = false, dark = false }) {
         </div>
       </section>
       <section
-        className={`page-section  ${dark ? "bg-dark-1 light-content" : ""} `}
-        id="portfolio"
+        className={`page-section scrollSpysection ${dark ? "bg-dark-1 light-content" : ""} `}
+        id="drivers"
       >
         <Features />
       </section>
@@ -184,10 +186,68 @@ export default function Home6({ onePage = false, dark = false }) {
       <hr className={`mt-0 mb-0 ${dark ? "white" : ""}`} />
 
       <section
-        className={`page-section  scrollSpysection  ${
-          dark ? "bg-dark-1 light-content" : ""
-        } `}
+        className={`page-section scrollSpysection ${dark ? "bg-dark-1 light-content" : ""} `}
+        id="hosts"
+      >
+        <div className="container position-relative">
+          <div className="row">
+            {/* Section Text */}
+            <div className="col-lg-6 col-xl-5 d-flex align-items-center mb-md-60 mb-sm-40">
+              <div className="w-100">
+                                 <h2 className="section-caption-fancy mb-20 mb-xs-10">
+                   For Hosts
+                 </h2>
+                <h3 className="section-title-small mb-30">
+                  Turn your unused space into income.
+                </h3>
+                <p className="section-descr mb-30">
+                  Whether you have a driveway, garage, or commercial parking space, ParkSight helps you monetize your unused parking areas with complete control over your listings.
+                </p>
+                {/* Features List */}
+                <div className="row features-list">
+                  {/* Features List Item */}
+                  {hostFeatures.map((feature, index) => (
+                    <div
+                      key={index}
+                      className="col-sm-6 col-lg-12 col-xl-6 d-flex mb-3"
+                    >
+                      <div className="features-list-icon">
+                        <i className="mi-check" />
+                      </div>
+                      <div className="features-list-text">{feature.text}</div>
+                    </div>
+                  ))}
+                  {/* End Features List Item */}
+                </div>
+                {/* End Features List */}
+              </div>
+            </div>
+            {/* End Section Text */}
+            {/* Image */}
+            <div className="col-lg-6 col-xl-7 d-flex align-items-center">
+              <div className="w-100">
+                <div className="mb-20">
+                  <Image
+                    src="/assets/images/host.svg"
+                    alt="Image Description"
+                    width={1200}
+                    height={658}
+                    className="w-100"
+                  />
+                </div>
+              </div>
+            </div>
+            {/* End Images */}
+          </div>
+        </div>
+      </section>
+      
+      <hr className={`mt-0 mb-0 ${dark ? "white" : ""}`} />
+
+      <section
+        className={`page-section scrollSpysection light-content`}
         id="waitlist"
+        style={{ backgroundColor: '#1e293b' }}
       >
         <Waitlist />
       </section>

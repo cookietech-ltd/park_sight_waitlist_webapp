@@ -98,3 +98,27 @@ a {
 html {
   scroll-behavior: smooth !important;
 }
+
+/* Early Discount button styles */
+.early-discount-btn:hover {
+  color: white !important;
+}
+
+.early-discount-btn:hover .btn-animate-y-1,
+.early-discount-btn:hover .btn-animate-y-2 {
+  color: white !important;
+}
+
+/* Waitlist form styles */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.transition-all:hover {
+  background-color: var(--color-dark-2) !important;
+  transform: translateY(-2px);
+}

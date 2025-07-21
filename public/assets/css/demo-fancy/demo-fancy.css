@@ -9,8 +9,8 @@
   --color-gray-1: #697582;
   --color-gray-2: #747f8c;
   --color-gray-3: #8a95a2;
-  --color-primary-1: #335cd6;
-  --color-primary-1-a: #316be2;
+  --color-primary-1: #004aac;
+  --color-primary-1-a: #003a8c;
   --color-primary-light-1: #eaf0fd;
   --color-primary-light-1-a: #bccaf1;
   --color-primary-2: #7752e7;
@@ -21,7 +21,7 @@
   --color-primary-light-4: #ffe1f5;
   --color-secondary-1: #fbe3a1;
   --color-gray-light-1: #f1f3f6;
-  --color-gray-light-2: #f7f9fc;
+  --color-gray-light-2: #f8fafc;
   --color-gray-light-3: #cad0d7;
   --color-gray-light-4: #d5d7d8;
   --color-gray-light-5: #cccdcf;
@@ -76,8 +76,8 @@
     transparent 13%,
     var(--color-primary-1) 60%
   );
-  --gradient-gray-light-1: linear-gradient(0deg, #f7f9fc 0%, #fff 100%);
-  --gradient-gray-light-2: linear-gradient(0deg, #fff 0%, #f7f9fc 100%);
+  --gradient-gray-light-1: linear-gradient(0deg, #f8fafc 0%, #fff 100%);
+  --gradient-gray-light-2: linear-gradient(0deg, #fff 0%, #f8fafc 100%);
   --border-radius-default: 10px;
   --box-shadow: 0px 5px 10px 0px rgba(42, 54, 79, 0.05),
     0px 1px 1px 0px rgba(42, 54, 79, 0.03),

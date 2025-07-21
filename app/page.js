@@ -38,7 +38,7 @@ export default function Home6ImageParallaxOnepage() {
 
             <Home6 onePage />
           </main>
-          <footer className="page-section footer bg-dark-1 light-content pb-30">
+          <footer className="page-section footer bg-dark-1 light-content pb-15">
             <Footer6 />
           </footer>
         </div>{" "}

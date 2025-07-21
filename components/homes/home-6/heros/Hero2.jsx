@@ -40,7 +40,7 @@ export default function Hero2() {
                   href="#waitlist"
                   className="btn btn-mod btn-color btn-large btn-round btn-hover-anim mx-1 mb-xs-10"
                 >
-                  <span>Early Bird Discount</span>
+                  <span>Join the Waitlist & Get $10 Off</span>
                 </a>
               </div>
             </div>

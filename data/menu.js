@@ -122,7 +122,8 @@ export const fancyOnepage = [
   { href: "#home", text: "Home", className: "active" },
   { href: "#about", text: "About" },
   { href: "#services", text: "How it works" },
-  { href: "#portfolio", text: "Why ParkSight?" },
+  { href: "#drivers", text: "For Drivers" },
+  { href: "#hosts", text: "For Hosts" },
 ];
 
 export const elegantMultipage = [

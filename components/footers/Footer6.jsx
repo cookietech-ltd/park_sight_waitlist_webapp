@@ -15,9 +15,9 @@ export default function Footer6() {
 
   return (
     <div className="container">
-      <div className="row pb-120 pb-sm-80 pb-xs-50">
-        <div className="col-lg-3 text-gray mb-md-50">
-          <div className="mb-30">
+      <div className="row pb-60 pb-sm-40 pb-xs-30">
+        <div className="col-lg-3 text-gray mb-md-30">
+          <div className="mb-20">
             <Image
               src="/assets/images/logo.svg"
               alt="Your Company Logo"
@@ -26,22 +26,21 @@ export default function Footer6() {
             />
           </div>
           <p>
-            Integer auctor aliquet martor, sed lorem malesuada eros blandit
-            eget. Proin lacinia mortoc id odio vestibulum.
+            ParkSight is proudly preparing to launch in Ohio.
           </p>
           <div className="clearlinks">
             <strong>T.</strong>
-            <a href="tel:+18376528800">+1 837 652 8800</a>
+            <a href="tel:+14023158613">+1-402-315-8613</a>
           </div>
           <div className="clearlinks">
             <strong>E.</strong>
-            <a href="mailto:ibthemes21@gmail.com">ibthemes21@gmail.com</a>
+            <a href="mailto:HernMaurice@dielmassgroup.com">HernMaurice@dielmassgroup.com</a>
           </div>
         </div>
         <div className="col-lg-7 offset-lg-2">
-          <div className="row mt-n30">
+          <div className="row mt-n20">
             {/* Footer Widget */}
-            <div className="col-sm-4 mt-30">
+            <div className="col-sm-4 mt-20">
               <h3 className="fw-title">Company</h3>
               <ul className="fw-menu clearlist local-scroll">
                 {navigationLinks.map((elm, i) => (
@@ -53,7 +52,7 @@ export default function Footer6() {
             </div>
             {/* End Footer Widget */}
             {/* Footer Widget */}
-            <div className="col-sm-4 mt-30">
+            <div className="col-sm-4 mt-20">
               <h3 className="fw-title">Social Media</h3>
               <ul className="fw-menu clearlist">
                 <FooterSocials />
@@ -61,7 +60,7 @@ export default function Footer6() {
             </div>
             {/* End Footer Widget */}
             {/* Footer Widget */}
-            <div className="col-sm-4 mt-30">
+            <div className="col-sm-4 mt-20">
               <h3 className="fw-title">Legal &amp; Press</h3>
               <ul className="fw-menu clearlist">
                 {footerLinks.map((elm, i) => (
@@ -83,11 +82,10 @@ export default function Footer6() {
       </div>
       {/* Footer Text */}
       <div className="row text-gray">
-        <div className="col-md-4 col-lg-3">
-          <b>© IB-Themes {new Date().getFullYear()}.</b>
+        <div className="col-md-6 col-lg-5" style={{ whiteSpace: 'nowrap' }}>
+          <b>© {new Date().getFullYear()} Dielmass Group, LLC. All rights reserved.</b>
         </div>
-        <div className="col-md-7 offset-md-1 offset-lg-2 clearfix">
-          <b>Based in London, United Kingdom.</b>
+        <div className="col-md-6 col-lg-7 clearfix text-center">
           {/* Back to Top Link */}
           <div
             className="local-scroll float-end mt-n20 mt-sm-10"
