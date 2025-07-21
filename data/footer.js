@@ -50,5 +50,6 @@ export const socialMediaLinks = [
 export const navigationLinks = [
   { href: "#about", text: "About" },
   { href: "#services", text: "How it works" },
-  { href: "#portfolio", text: "Why ParkSight?" },
+  { href: "#drivers", text: "For Drivers" },
+  { href: "#hosts", text: "For Hosts" },
 ];
