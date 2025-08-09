@@ -71,7 +71,7 @@ export default function Waitlist() {
         <div className="col-lg-8 text-center">
           <h2 className="section-title mb-30 white">Be the First to Park Smarter.</h2>
           <p className="section-descr mb-40 white opacity-08" style={{ fontSize: '1.125rem' }}>
-            ParkSight launches in Cincinnati, Columbus, and Cleveland on <strong>September 2nd, 2025</strong>. Join the exclusive waitlist today to be the first to know when we go live.
+            ParkSight launches in Cincinnati, Columbus, and Cleveland on <strong>October 1st, 2025</strong>. Join the exclusive waitlist today to be the first to know when we go live.
           </p>
           
           {/* Benefits Box */}
