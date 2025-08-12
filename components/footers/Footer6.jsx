@@ -28,14 +28,14 @@ export default function Footer6() {
           <p>
             ParkSight is proudly preparing to launch in Ohio.
           </p>
-          <div className="clearlinks">
+          {/* <div className="clearlinks">
             <strong>T.</strong>
             <a href="tel:+14023158613">+1-402-315-8613</a>
           </div>
           <div className="clearlinks">
             <strong>E.</strong>
             <a href="mailto:HernMaurice@dielmassgroup.com">HernMaurice@dielmassgroup.com</a>
-          </div>
+          </div> */}
         </div>
         <div className="col-lg-7 offset-lg-2">
           <div className="row mt-n20">
